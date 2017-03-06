@@ -1,0 +1,18 @@
+@import url("food-list.css");
+
+#explanation{
+  color:purple;
+  text-decoration: underline;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: row;
+}
+.flex-item{
+  padding: 10px;
+}
+.medium-text-area{
+  height:50px;
+  width: 300px;
+}
