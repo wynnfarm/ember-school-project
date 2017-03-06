@@ -1,0 +1,28 @@
+<div class="flex-container">
+<div  class='flex-item'>
+  <h1>Chef Tracker</h1>
+  <p id="explanation">Menu Tracker helps you see what dishes are available today</p>
+  <div>
+    <p>{{availableChefs.length}} out of {{totalChefs}} chefs cooking right now!</p>
+    <p>Our {{totalChefs}} chefs teach {{totalStudents}} students. {{link-to 'Learn more about us here.' 'about'}}</p>
+  <ul>
+    {{#each model as |chef|}}
+      {{#if chef.isAvailable}}
+        <li>{{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}<button {{action 'makeUnavailable' chef}}>Make Unavailable</button>
+          <br>Number of Students: <button {{action 'subtractStudent' chef}}>-</button>
+          {{chef.students}}<button {{action 'addStudent' chef}}>+</button></li>
+        {{else}}
+        <li class="not-available">{{chef.name}} <button {{action 'makeAvailable' chef}}>Make Available</button>
+        </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+  </div>
+  <hr>
+  {{input value=newItem}}
+  <button {{action 'saveNewItem' newItem}}>Save</button>
+</div>
+  <div class='flex-item'>
+    {{outlet}}
+  </div>
+</div>

@@ -6,9 +6,18 @@ const Router = Ember.Router.extend({
   rootURL: config.rootURL
 });
 
-//Hey, I'm a comment
-//Hey, I'm in a new branch "branch-name"
-Router.map(function() {
+
+Router.map(function(){
+  this.route('chefs', function(){
+    this.route('chef', {path:':chef_id'});
+    this.route('chef.edit', {path:':chef_id/edit'});
+  });
+  this.route('about');
+  this.route('contact');
+  this.route('favorite-word', {path: 'favorite-word/:word'});
+
+  // this.route('application', {path:'/'});
+
 });
 
 export default Router;

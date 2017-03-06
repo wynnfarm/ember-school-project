@@ -1,0 +1,7 @@
+li.not-available {
+  color:red;
+  text-decoration: line-through;
+}
+li.available {
+  text-decoration: underline;
+}
